@@ -40,7 +40,7 @@ def load_mappings():
 def load_dataset(dataset):
     if dataset == "mimic3":
         ds = MIMIC3Dataset(
-        root = "/home/kyunghoon/physionet.org/files/mimiciii/1.4",
+        root = "...",
         tables=["DIAGNOSES_ICD", "PROCEDURES_ICD", "PRESCRIPTIONS"],      
         code_mapping={
             "NDC": ("ATC", {"target_kwargs": {"level": 3}}),
@@ -52,7 +52,7 @@ def load_dataset(dataset):
         )
     elif dataset == "mimic4":
         ds = MIMIC4Dataset(
-        root = "/home/kyunghoon/physionet.org/files/mimiciv/3.1/hosp", 
+        root = "...", 
         tables=["diagnoses_icd", "procedures_icd", "prescriptions"],      
         code_mapping={
             "NDC": ("ATC", {"target_kwargs": {"level": 3}}),
@@ -134,7 +134,7 @@ def main():
         # "mortality", 
         "readmission"
         ]
-    out_dir = "/home/kyunghoon/Models/HealthCare/AAAI/data"
+    out_dir = "..."
     condition_dict, procedure_dict, drug_dict = load_mappings()
     
     for dataset in datasets:
@@ -226,7 +226,7 @@ def main():
         #     if sample['patient_id'] in pat_ori_id:
         #         new_sample_list.append(sample)
                 
-        # mimic4_sample_dataset = sample_dataset(new_sample_list) # 오류 나는 부분. 
+        # mimic4_sample_dataset = sample_dataset(new_sample_list) 
         # # mimic4_sample_dataset = SampleDataset(new_sample_list)
 
         # with open(f"{out_dir}/mimic4_{task}.pkl", "wb") as f:
