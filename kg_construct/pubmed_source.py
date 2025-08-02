@@ -116,7 +116,7 @@
 #     with open("/kg_construct/all_visit_concepts.json", "r") as f:
 #         all_visit_concepts = [set(visit) for visit in json.load(f)]
 
-#     if os.path.exists(f"/shared/eng/pj20/kelpie_exp_data/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json"):
+#     if os.path.exists(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json"):
 #         print("Loading filtered concept sets from file...")
 #         with open(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "r") as f:
 #             filtered_concept_sets = json.load(f)
