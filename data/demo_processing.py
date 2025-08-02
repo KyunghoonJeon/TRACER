@@ -27,10 +27,10 @@ def load_patient_info(subject_id, admissions_df, patients_df):
         "age": age
     }
 
-admissions_df = pd.read_csv("/home/kyunghoon/physionet.org/files/mimiciii/1.4/ADMISSIONS.csv")
-patients_df   = pd.read_csv("/home/kyunghoon/physionet.org/files/mimiciii/1.4/PATIENTS.csv")
+admissions_df = pd.read_csv("...")
+patients_df   = pd.read_csv("...")
 
-with open("/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/ehr_data/patient_mimic3_mortality.json", "r") as f:
+with open("...", "r") as f:
     visits_data = json.load(f)
 
 output = {}
