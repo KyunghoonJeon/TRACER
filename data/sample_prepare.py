@@ -7,8 +7,8 @@ from collections import defaultdict
 DATASET = "mimic4"
 TASK = "readmission"
 
-ehr_path = f"/home/kyunghoon/Models/HealthCare/AAAI/data/{DATASET}_{TASK}.pkl"
-agg_samples_path = f"/home/kyunghoon/Models/HealthCare/AAAI/data/patient_{DATASET}_{TASK}.json"
+ehr_path = f"/data/{DATASET}_{TASK}.pkl"
+agg_samples_path = f"/data/patient_{DATASET}_{TASK}.json"
 
 sample_dataset = pickle.load(open(ehr_path, "rb"))
 agg_samples = json.load(open(agg_samples_path, "r"))
