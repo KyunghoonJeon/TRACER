@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 TASKS = ["readmission", "mortality"]
 DATASETS = ["mimic4"] # 'mimic3'
-SAVE_DIR = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct"
+SAVE_DIR = "/kg_construct"
 
 all_visit_concepts = []
 all_concept_coexistence = defaultdict(lambda: defaultdict(int))
@@ -13,7 +13,7 @@ all_concept_coexistence = defaultdict(lambda: defaultdict(int))
 print("Processing datasets...")
 for DATASET in DATASETS:
     for TASK in TASKS:
-        agg_samples_path = f"/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/ehr_data/patient_{DATASET}_{TASK}.json"
+        agg_samples_path = f"/ehr_data/patient_{DATASET}_{TASK}.json"
         agg_samples = json.load(open(agg_samples_path, "r"))
 
         # Task 1: Get a list of sets of concepts for each visit
