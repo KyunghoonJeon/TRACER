@@ -4,7 +4,7 @@ import time
 import openai
 
 
-openai.api_key = "sk-proj-AZ4V8SdoYrxxI7hKO2i4T3BlbkFJoiSWB1YTiv4FMpW38jrR"
+openai.api_key = "..."
 
 CLASSIFIED_FILE = "entity_types.json"
 SEVERITY_FILE   = "diagnosis_severity_scores.json"
