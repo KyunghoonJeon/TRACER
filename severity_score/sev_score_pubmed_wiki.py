@@ -9,8 +9,8 @@ import wikipedia
 import re
 
 
-openai.api_key = "sk-proj-AZ4V8SdoYrxxI7hKO2i4T3BlbkFJoiSWB1YTiv4FMpW38jrR"
-Entrez.email   = "kyunghoon.jeon@googlemail.com"
+openai.api_key = "..."
+Entrez.email   = "..."
 SCORE_MODEL    = "gpt-4o-mini"
 CLASSIFIED_FILE = "entity_types_ex.json"
 SEVERITY_FILE   = "diagnosis_severity_scores_pubmed_wiki.json"
