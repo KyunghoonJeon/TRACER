@@ -119,12 +119,12 @@ def main():
     resource_path = "./resources"
     condition_dict, procedure_dict, drug_dict = read_code2name(resource_path)
     
-    umls_graph_file = "/shared/eng/pj20/umls/graph.txt"
-    umls_mapping_file = "/shared/eng/pj20/umls/UMLS.csv"
-    atc_to_umls_file = "/home/pj20/server-04/Kelpie/kg_construct/umls_source/ATC_to_UMLS.csv"
-    icd9_to_umls_file = "/home/pj20/server-04/Kelpie/kg_construct/umls_source/ICD9_to_UMLS.csv"
-    icd9proc_to_ccsproc_file = "/home/pj20/server-04/Kelpie/kg_construct/umls_source/ICD9PROC_to_CCSPROC.csv"
-    icd9cm_to_ccscm_file = "/home/pj20/server-04/Kelpie/kg_construct/umls_source/ICD9CM_to_CCSCM.csv"
+    umls_graph_file = "/umls/graph.txt"
+    umls_mapping_file = "/umls/UMLS.csv"
+    atc_to_umls_file = "/kg_construct/umls_source/ATC_to_UMLS.csv"
+    icd9_to_umls_file = "/kg_construct/umls_source/ICD9_to_UMLS.csv"
+    icd9proc_to_ccsproc_file = "/kg_construct/umls_source/ICD9PROC_to_CCSPROC.csv"
+    icd9cm_to_ccscm_file = "/kg_construct/umls_source/ICD9CM_to_CCSCM.csv"
 
     print("Reading UMLS graph...")
     umls_graph = read_umls_graph(umls_graph_file)
