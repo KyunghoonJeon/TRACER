@@ -175,12 +175,12 @@ def build_kg_for_concepts_llm(concept_sets: List[Set[str]], save_interval: int =
 
 def main():
     # Load the all_visit_concepts from the JSON file
-    with open("/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/all_visit_concepts.json", "r") as f:
+    with open("/kg_construct/all_visit_concepts.json", "r") as f:
         all_visit_concepts = [set(visit) for visit in json.load(f)]
 
-    if os.path.exists(f"/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json"):
+    if os.path.exists(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json"):
         print("Loading filtered concept sets from file...")
-        with open(f"/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "r") as f:
+        with open(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "r") as f:
             filtered_concept_sets = json.load(f)
     # else:
     #     print("Filtering similar concept sets...")
@@ -192,7 +192,7 @@ def main():
         for concept_set in tqdm(all_visit_concepts, desc="Filtering Concept Sets"):
             filtered_concept_sets.append(list(concept_set))
 
-        with open(f"/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "w") as f:
+        with open(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "w") as f:
             json.dump(filtered_concept_sets, f)
     
 
@@ -200,7 +200,7 @@ def main():
     kg_triples_dict_llm = build_kg_for_concepts_llm(filtered_concept_sets, save_interval=500)
 
     # Save the final KG triples from LLM to a JSON file
-    with open("/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct_/kg_from_llm.json", "w") as f:
+    with open("/kg_construct_/kg_from_llm.json", "w") as f:
         json.dump(list(kg_triples_dict_llm), f, indent=4)
 
     print(f"Number of filtered concept sets: {len(filtered_concept_sets)}")  
