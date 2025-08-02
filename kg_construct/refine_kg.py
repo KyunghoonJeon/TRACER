@@ -18,7 +18,7 @@ REL_THRESHOLD = 0.14
 # with open('./apis/openai.key', 'r') as f:
 #     api_key = f.read().strip()
 
-with open("/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/apis/openai.key", 'r') as f:
+with open("/apis/openai.key", 'r') as f:
     key = f.readlines()[0].strip()
 
 # client = OpenAI(api_key=api_key)
@@ -88,8 +88,8 @@ def find_optimal_threshold(embeddings, min_threshold=0.05, max_threshold=0.37, n
             new_to_original_mapping, _ = create_mappings(labels, sample_entities, embeddings)
 
             # Save the new_to_original mapping for the current threshold
-            # output_dir = "/shared/eng/pj20/kelpie_exp_data/cluster_test"
-            output_dir = '/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/cluster_test'
+            # output_dir = "//cluster_test"
+            output_dir = '/cluster_test'
             os.makedirs(output_dir, exist_ok=True)
             with open(f"{output_dir}/new_to_original_mapping_threshold_{threshold:.2f}.json", 'w') as f:
                 json.dump(new_to_original_mapping, f, indent=4)
@@ -149,8 +149,8 @@ def save_cluster_embeddings(cluster_embeddings, file_path):
         pickle.dump(cluster_embeddings, f)
 
 def main():
-    kg_path = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/graph/kg_raw.txt"
-    output_dir = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/clustering"
+    kg_path = "/graph/kg_raw.txt"
+    output_dir = "/clustering"
     num_threads = 10
 
     # Set up logging
