@@ -320,18 +320,18 @@ def process_concept(concept, related_concepts, concept_name, related_concepts_na
 
 def main():
     # resource_path = "./resources"
-    resource_path = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/ehr_prepare/resources"
+    resource_path = "/ehr_prepare/resources"
     condition_dict, procedure_dict, drug_dict = read_code2name(resource_path)
     condition_dict_inv = {v: k for k, v in condition_dict.items()}
     procedure_dict_inv = {v: k for k, v in procedure_dict.items()}
     drug_dict_inv = {v: k for k, v in drug_dict.items()}
     
-    umls_graph_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/umls/graph.txt"
-    umls_mapping_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/umls/UMLS.csv"
-    atc_to_umls_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/resources/ATC_to_UMLS.csv"
-    icd9_to_umls_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/resources/ICD9_to_UMLS.csv"
-    icd9proc_to_ccsproc_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/resources/ICD9PROC_to_CCSPROC.csv"
-    icd9cm_to_ccscm_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/resources/ICD9CM_to_CCSCM.csv"
+    umls_graph_file = "/umls/graph.txt"
+    umls_mapping_file = "/umls/UMLS.csv"
+    atc_to_umls_file = "/kg_construct/resources/ATC_to_UMLS.csv"
+    icd9_to_umls_file = "/kg_construct/resources/ICD9_to_UMLS.csv"
+    icd9proc_to_ccsproc_file = "/KARE/kg_construct/resources/ICD9PROC_to_CCSPROC.csv"
+    icd9cm_to_ccscm_file = "/kg_construct/resources/ICD9CM_to_CCSCM.csv"
 
     print("Reading UMLS graph...")
     umls_graph = read_umls_graph(umls_graph_file)
@@ -350,7 +350,7 @@ def main():
     graph_path = "./graphs"
     os.makedirs(graph_path, exist_ok=True)
 
-    with open("/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/all_top_coexisting_concepts.json", "r") as f:
+    with open("/kg_construct/all_top_coexisting_concepts.json", "r") as f:
         all_top_coexisting_concepts = json.load(f)
 
     # Extract subgraphs for medical concepts
@@ -481,12 +481,12 @@ def main():
             
             if completed_tasks % 100 == 0:
                 print("Performing intermediate saving...")
-                with open("/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct_/kg_from_kg_intermediate.json", "w") as f:
+                with open("/kg_construct_/kg_from_kg_intermediate.json", "w") as f:
                     json.dump(output_file, f, indent=2)
                     
             
 
-    with open("/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct_/kg_from_kg.json", "w") as f:
+    with open("/kg_construct_/kg_from_kg.json", "w") as f:
         json.dump(output_file, f, indent=2)
 
 if __name__ == "__main__":
