@@ -10,8 +10,8 @@ from Bio import Entrez
 import wikipedia
 from bs4 import BeautifulSoup
 
-openai.api_key = "sk-proj-AZ4V8SdoYrxxI7hKO2i4T3BlbkFJoiSWB1YTiv4FMpW38jrR"
-Entrez.email      = "kyunghoon.jeon@googlemail.com"
+openai.api_key = "..."
+Entrez.email      = "..."
 CLASSIFIED_FILE   = "entity_types.json"
 OUTPUT_FILE       = "diagnosis_with_context_and_scores.json"
 SCORE_MODEL       = "gpt-4o-mini"
