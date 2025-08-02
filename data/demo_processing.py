@@ -48,5 +48,5 @@ for case_key, case_value in visits_data.items():
     }
     output[case_key] = new_case
 
-with open("patient_mimic3_mortality_demo.json", "w", encoding="utf-8") as f:
+with open("...", "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
