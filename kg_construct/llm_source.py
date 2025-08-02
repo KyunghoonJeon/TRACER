@@ -150,9 +150,9 @@ def build_kg_for_concepts_llm(concept_sets: List[Set[str]], save_interval: int =
             
             if (processed_count + skipped_count) % save_interval == 0:
                 print(f"Processed: {processed_count}, Skipped: {skipped_count}")
-                # with open(f"/shared/eng/pj20/kelpie_exp_data/kg_construct/graphs/llm/kg_from_llm_{processed_count}.json", "w") as f:
+                # with open(f"/kg_construct/graphs/llm/kg_from_llm_{processed_count}.json", "w") as f:
                 #     json.dump(list(kg_triples_set), f, indent=4)
-                with open(f"/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/graphs/llm/kg_from_llm_{processed_count}.json", "w") as f:
+                with open(f"/kg_construct/graphs/llm/kg_from_llm_{processed_count}.json", "w") as f:
                     json.dump(list(kg_triples_set), f, indent=4)
                     
     return kg_triples_set
