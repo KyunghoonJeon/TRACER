@@ -25,9 +25,9 @@ REL_MAPPING = {
 
 
 def load_mappings():
-    condition_mapping_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/resources/CCSCM.csv"
-    procedure_mapping_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/resources/CCSPROC.csv"
-    drug_file = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct/resources/ATC.csv"
+    condition_mapping_file = "/kg_construct/resources/CCSCM.csv"
+    procedure_mapping_file = "/kg_construct/resources/CCSPROC.csv"
+    drug_file = "/kg_construct/resources/ATC.csv"
 
     condition_dict = {}
     condition_dict_inv = {}
@@ -217,7 +217,7 @@ def combine_concept_specific_knowledge_graphs(graph_path: str, extracted_kg_path
 
 def main():
     graph_path = "./graphs"
-    extracted_kg_path = "/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE/kg_construct_/"
+    extracted_kg_path = "/kg_construct_/"
     
     if not os.path.exists(os.path.join(graph_path, "condition")) or not os.path.exists(os.path.join(graph_path, "procedure")) or not os.path.exists(os.path.join(graph_path, "drug")):
         os.makedirs(os.path.join(graph_path, "condition"))
