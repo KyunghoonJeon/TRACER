@@ -2,7 +2,7 @@ import json
 from typing import List, Set, Tuple
 from sklearn.feature_extraction.text import CountVectorizer
 import sys
-sys.path.append('/home/kyunghoon/Models/HealthCare/HealthCare_Baselines/KARE')  # Replace with the actual path to the 'apis' folder
+sys.path.append('...')  # Replace with the actual path to the 'apis' folder
 from apis.claude_api import get_claude_response
 from apis.gpt_api import get_gpt_response
 import re
