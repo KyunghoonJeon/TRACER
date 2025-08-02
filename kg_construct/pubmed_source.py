@@ -15,8 +15,8 @@
 
 # SIMILARITY_THRESHOLD = 5
 
-# db_file = "/shared/eng/pj20/kelpie_exp_data/pubmed_vectors/pubmed_data.db"
-# h5_file = "/shared/eng/pj20/kelpie_exp_data/pubmed_vectors/pubmed_embeddings.h5"
+# db_file = "/pubmed_vectors/pubmed_data.db"
+# h5_file = "/pubmed_vectors/pubmed_embeddings.h5"
 
 # os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 # retriever = AbstractRetriever(h5_file, db_file, chunk_size=250000, use_cuda=True)
@@ -113,18 +113,18 @@
 # def main():
 
 #     # Load the all_visit_concepts from the JSON file
-#     with open("/shared/eng/pj20/kelpie_exp_data/kg_construct/all_visit_concepts.json", "r") as f:
+#     with open("/kg_construct/all_visit_concepts.json", "r") as f:
 #         all_visit_concepts = [set(visit) for visit in json.load(f)]
 
 #     if os.path.exists(f"/shared/eng/pj20/kelpie_exp_data/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json"):
 #         print("Loading filtered concept sets from file...")
-#         with open(f"/shared/eng/pj20/kelpie_exp_data/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "r") as f:
+#         with open(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "r") as f:
 #             filtered_concept_sets = json.load(f)
 #     else:
 #         print("Filtering similar concept sets...")
 #         filtered_concept_sets = filter_similar_sets(all_visit_concepts)
 
-#         with open(f"/shared/eng/pj20/kelpie_exp_data/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "w") as f:
+#         with open(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "w") as f:
 #             json.dump(filtered_concept_sets, f)
 
 #     # Filter out highly similar concept sets
@@ -134,7 +134,7 @@
 #     kg_triples_dict = build_kg_for_concepts(filtered_concept_sets)
 
 #     # Save the KG triples to a JSON file
-#     with open("/shared/eng/pj20/kelpie_exp_data/kg_construct_/kg_from_pubmed.json", "w") as f:
+#     with open("/kg_construct_/kg_from_pubmed.json", "w") as f:
 #         json.dump(kg_triples_dict, f, indent=4)
 
 #     print(f"Number of filtered concept sets: {len(filtered_concept_sets)}")
@@ -300,12 +300,12 @@ def parse_triples(response: str, concept_set: Set[str]) -> List[Tuple[str, str, 
 def main():
 
     # Load the all_visit_concepts from the JSON file
-    with open("/shared/eng/pj20/kelpie_exp_data/kg_construct/all_visit_concepts.json", "r") as f:
+    with open("/kg_construct/all_visit_concepts.json", "r") as f:
         all_visit_concepts = [set(visit) for visit in json.load(f)]
 
-    if os.path.exists(f"/shared/eng/pj20/kelpie_exp_data/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json"):
+    if os.path.exists(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json"):
         print("Loading filtered concept sets from file...")
-        with open(f"/shared/eng/pj20/kelpie_exp_data/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "r") as f:
+        with open(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "r") as f:
             filtered_concept_sets = json.load(f)
             # Convert lists back to sets
             filtered_concept_sets = [set(concept_set) for concept_set in filtered_concept_sets]
@@ -313,7 +313,7 @@ def main():
         print("Filtering similar concept sets...")
         filtered_concept_sets = filter_similar_sets(all_visit_concepts)
 
-        with open(f"/shared/eng/pj20/kelpie_exp_data/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "w") as f:
+        with open(f"/kg_construct/filtered_concept_sets_{SIMILARITY_THRESHOLD}_.json", "w") as f:
             # Convert sets to lists for JSON serialization
             json.dump([list(concept_set) for concept_set in filtered_concept_sets], f)
 
@@ -321,7 +321,7 @@ def main():
     kg_triples_dict = build_kg_for_concepts(filtered_concept_sets)
 
     # Save the KG triples to a JSON file
-    with open("/shared/eng/pj20/kelpie_exp_data/kg_construct_/kg_from_pubmed.json", "w") as f:
+    with open("/kg_construct_/kg_from_pubmed.json", "w") as f:
         json.dump(kg_triples_dict, f, indent=4)
 
     print(f"Number of filtered concept sets: {len(filtered_concept_sets)}")
