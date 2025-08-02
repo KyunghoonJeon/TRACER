@@ -2,7 +2,6 @@ from pyhealth.data import Patient, Visit
 
 def mortality_prediction_mimic3_fn(patient):
     samples = []
-    # sort via 'ROW_ID' not 'HADM_ID'
     visits = sorted(patient, key=lambda v: v.encounter_time)
     # we will drop the last visit
     for i in range(len(visits) - 1):
