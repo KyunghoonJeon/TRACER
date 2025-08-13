@@ -12,7 +12,7 @@ from datetime import datetime
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
 
 openai.api_key = os.getenv("OPENAI_API_KEY", "")
-REASONING_MODEL = "gpt-4o-mini"
+REASONING_MODEL = "gpt-4o-mini" # claude if possible
 DELAY_SEC = 1
 
 INPUT_FOLDER = "..."
