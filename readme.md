@@ -5,22 +5,29 @@
 This project utilizes the MIMIC-III and MIMIC-IV datasets provided by the MIT Laboratory for Computational Physiology (LCP).
 Since these datasets contain de-identified health information, data access requires credentialed authorization through the PhysioNet platform.
 
-**Step 1.**
+**Step 1.** Complete CITI “Data or Specimens Only Research” Training
 
-Complete CITI “Data or Specimens Only Research” Training
+**Step 2.** Request Access via PhysioNet
 
-**Step 2.**
+**Step 3.** Once approved download the Data
 
-Request Access via PhysioNet
+**Step 4.** Directory Structure
+```bash
+project_root/
+│
+├── data/
+│   ├── mimic3/
+│   │   ├── ADMISSIONS.csv
+│   │   ├── PATIENTS.csv
+│   │   ├── DIAGNOSES_ICD.csv
+│   │   └── NOTEEVENTS.csv
+│   └── mimic4/
+│       ├── admissions.csv
+│       ├── patients.csv
+│       ├── diagnoses_icd.csv
+│       └── noteevents.csv
 
-**Step 3.**
-
-Once approved download the Data
-
-**Step 4.**
-
-Directory Structure
-
+```
 
 
 ### 1. Prepare EHR data
