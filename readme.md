@@ -60,3 +60,10 @@ python refine_kg.py
 cd severity_score
 python sev_score_pubmed_wiki.py
 ```
+
+
+### 3. Patient Medical Profile Retrieval
+
+
+
+### 4. Retrieval-augmented Clinical Risk Prediction
