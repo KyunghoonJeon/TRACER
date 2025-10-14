@@ -64,7 +64,17 @@ python sev_score_pubmed_wiki.py
 
 ### 3. Patient Medical Profile Retrieval
 
+**Trajectory Retrieval**
+```bash
+cd trajectory path
+python trajectory_retrieval.py
+```
 
+**Trajectory Refinement**
+```bash
+cd trajectory path
+python trajectory_refinement.py
+```
 
 ### 4. Retrieval-augmented Clinical Risk Prediction
 
