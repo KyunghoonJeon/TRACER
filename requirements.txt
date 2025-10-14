@@ -1,0 +1,8 @@
+beautifulsoup4==4.14.2
+networkx==3.3
+openai==0.28.0
+pyhealth==1.1.6
+scikit-learn==1.4.2
+torch==2.5.1
+torch-geometric==2.6.1
+wikipedia==1.4.0
