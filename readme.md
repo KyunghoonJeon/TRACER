@@ -43,7 +43,7 @@ cd kg_construct
 python llm_source.py
 ```
 
-**KG Combination**
+**KG Combination:**
 ```bash
 cd kg_construct
 python combine.py
