@@ -1,0 +1,39 @@
+[Reasoning] Given the following task description, patient trajectory path,
+patient demographics, patient-specific clinical notes, and top-5 similar
+patients, please provide a step-by-step reasoning process that leads to
+the prediction outcome based on the patient’s context. After the reasoning
+process, provide the prediction label (0/1).
+### Task
+15-Day Readmission Prediction Task
+Predict whether the patient will be readmitted within 15 days of discharge.
+Labels: 0 = no readmission, 1 = readmission
+Regulator – Predict "No Readmission (0)" unless there is clear, overwhelming
+evidence of high risk.
+Criteria for Readmission (1):
+- Persistent or worsening symptoms despite treatment
+- Poor discharge planning or lack of social support
+- Critical unresolved issues (e.g., uncontrolled infection, CHF
+decompensation)
+Do NOT predict readmission if:
+- Mild concerns, uncertainty, or adequate discharge planning
+### Clinical Assessment Summary
+Protective Paths:
+protective_text
+Risk Paths:
+risk_text
+### Patient demographics
+demographics
+### Clinical Notes
+retrieved_clinical_notes
+### Similar Patients
+similar_patients_context
+### Step-by-Step Reasoning Guide
+1. Review protective vs. risk paths
+2. Assess severity and trajectory
+3. Match against readmission criteria
+4. Contrast with similar patients
+5. Evaluate discharge planning
+6. Decide conservatively
+### Output (Reasoning and Final Prediction)
+# Reasoning
+# Final prediction

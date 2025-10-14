@@ -1,0 +1,39 @@
+[Reasoning] Given the following task description, patient trajectory path,
+patient demographics, patient-specific clinical notes, and top-5 similar
+patients, please provide a step-by-step reasoning process that leads to
+the prediction outcome based on the patient’s context. After the reasoning
+process, provide the prediction label (0/1).
+### Task
+Mortality Prediction Task
+Predict the mortality outcome for a patient’s subsequent hospital visit.
+Labels: 0 = survival, 1 = mortality
+Regulator – Predict "Survival (0)" unless there is overwhelming evidence
+to predict "Mortality (1)".
+Criteria for Mortality (1):
+- Critical high-risk condition with evidence of continuous deterioration
+- Non-responsiveness to intensive care
+Do NOT predict mortality if:
+- Mild-to-moderate deterioration
+- Uncertainty or signs of recovery
+### Clinical Assessment Summary
+Protective Paths:
+protective_text
+Risk Paths:
+risk_text
+### Patient demographics
+demographics
+### Clinical Notes
+retrieved_clinical_notes
+### Similar Patients
+similar_patients_context
+### Step-by-Step Reasoning Guide
+1. Review protective and risk paths
+2. Determine severity and progression
+3. Match against mortality criteria
+4. Compare with similar patients
+5. Weigh protective signals
+6. Decide conservatively
+### Output (Reasoning and Final prediction)
+# Reasoning
+# Final prediction
+(If any information of demographics is out of bounds, ignore it.)
