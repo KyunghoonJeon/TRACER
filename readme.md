@@ -11,24 +11,6 @@ Since these datasets contain de-identified health information, data access requi
 
 **Step 3.** Once approved download the Data
 
-**Step 4.** Directory Structure
-```bash
-project_root/
-│
-├── data/
-│   ├── mimic3/
-│   │   ├── ADMISSIONS.csv
-│   │   ├── PATIENTS.csv
-│   │   ├── DIAGNOSES_ICD.csv
-│   │   └── NOTEEVENTS.csv
-│   └── mimic4/
-│       ├── admissions.csv
-│       ├── patients.csv
-│       ├── diagnoses_icd.csv
-│       └── noteevents.csv
-
-```
-
 
 ### 1. Prepare EHR data
 ```bash
