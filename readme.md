@@ -67,3 +67,11 @@ python sev_score_pubmed_wiki.py
 
 
 ### 4. Retrieval-augmented Clinical Risk Prediction
+
+**Inference**
+For other datasets and tasks, change the prompts and directories. 
+Prompts are available in the prompt folder. 
+```bash
+cd inference
+python mimic3_mortality.py
+```
