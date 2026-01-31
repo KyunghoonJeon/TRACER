@@ -65,7 +65,7 @@ python refine_kg.py
 ```
 
 **Severity score definition:**
-- 설명
+- Severity Score Definition assigns a clinical severity score to each medical concept by retrieving relevant evidence from PubMed abstracts and Wikipedia summaries. An LLM synthesizes the retrieved medical literature to estimate a normalized severity score, which is later used to weight concepts and relations in the knowledge graph.
 
 ```bash
 cd severity_score
