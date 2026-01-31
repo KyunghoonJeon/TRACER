@@ -31,7 +31,7 @@ python query_data_prepare.py
 
 **Step 2. KG Extraction:**
 - PumMed / LLM / UMLS
-- 설명
+- KG Extraction integrates medical knowledge from three complementary sources which are PubMed, UMLS, and LLMs, to construct a unified knowledge graph. PubMed abstracts are downloaded, embedded, and converted into a structured format to extract evidence-based medical relations, while UMLS provides curated biomedical concept relationships. Finally, LLMs are used to generate supplementary relational knowledge to enrich and extend the coverage of the final KG.
 
 ```bash
 # PubMed
