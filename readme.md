@@ -51,7 +51,7 @@ python llm_source.py
 ```
 
 **Step 3. KG Combination:**
-- 설명
+- KG Combination merges the extracted knowledge graphs from PubMed, UMLS, and LLM sources into a single unified medical knowledge graph. This step aligns medical concepts, combines overlapping relations, and removes redundancies to produce a coherent graph for downstream modeling and retrieval.
 
 ```bash
 python combine.py
