@@ -22,7 +22,7 @@ python sample_prepare.py
 ## 2. Severity-weighted medical KG Construction
 
 **Step 1. Query Preparation:**
-- This code builds visit-level medical concept co-occurrence statistics from MIMIC EHR data to identify commonly appearing diagnoses, procedures, and medications together.
+- This code processes MIMIC-IV EHR data to extract visit-level sets of diagnoses, procedures, and medications. It computes how frequently medical concepts co-occur within the same visit and identifies the top 20 most common co-existing concepts for each concept. The results are saved for downstream analysis such as knowledge graph construction or retrieval-based modeling.
 
 ```bash
 cd kg_construct
