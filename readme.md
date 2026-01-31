@@ -75,7 +75,7 @@ python sev_score_pubmed_wiki.py
 
 ## 3. Patient Medical Profile Retrieval
 **Step 1. Trajectory Retrieval & Refinement**
-- 설명
+- Trajectory Retrieval & Refinement retrieves patient-specific clinical trajectories from the severity-weighted medical knowledge graph. The retrieved paths are then filtered and refined to retain clinically relevant and severity-aware progression patterns for downstream prediction.
 
 ```bash
 cd trajectory path
