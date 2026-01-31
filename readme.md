@@ -58,7 +58,7 @@ python combine.py
 ```
 
 **Step 4. Semantic Clustering:**
-- 설명
+- Semantic Clustering refines the unified medical knowledge graph by semantically clustering related medical concepts based on their embeddings and relational similarity.
 
 ```bash
 python refine_kg.py
