@@ -1,6 +1,6 @@
 # TRACER: Clinical Risk Prediction via Heterogeneous Retrieval from Severity-Aware Medical Knowledge Graphs and Clinical Text
 
-### 0. Dataset Access: MIMIC-III and MIMIC-IV
+## 0. Dataset Access: MIMIC-III and MIMIC-IV
 
 This project utilizes the MIMIC-III and MIMIC-IV datasets provided by the MIT Laboratory for Computational Physiology (LCP).
 Since these datasets contain de-identified health information, data access requires credentialed authorization through the PhysioNet platform.
@@ -12,87 +12,83 @@ Since these datasets contain de-identified health information, data access requi
 **Step 3.** Once approved download the Data
 
 
-### 1. Prepare EHR data
+## 1. Prepare EHR data
 ```bash
 cd data
 python ehr_data_prepare.py
 python sample_prepare.py
 ```
 
-### 2. Severity-weighted medical KG Construction
+## 2. Severity-weighted medical KG Construction
 
-**Query Preparation:**
+**Step 1. Query Preparation:**
+- 설명
+
 ```bash
 cd kg_construct
 python query_data_prepare.py
 ```
 
-**KG Extraction (PubMed):**
+**Step 2. KG Extraction:**
+- PumMed / LLM / UMLS
+- 설명
 
 ```bash
+# PubMed
 cd kg_construct/pubmed_index
 python download_pubmed.py
 python embed_pubmed.py
 python convert_dat.py
-```
 
-```bash
-cd kg_construct
+cd .. # /kg_construct
 python pubmed_source.py
-```
 
-**KG Extraction (UMLS):**
-
-```bash
-cd kg_construct
+# UMLS
 python umls_source.py
-```
 
-**KG Extraction (LLM):**
-```bash
-cd kg_construct
+# LLM
 python llm_source.py
 ```
 
-**KG Combination:**
+**Step 3. KG Combination:**
+- 설명
+
 ```bash
-cd kg_construct
 python combine.py
 ```
 
-**Semantic Clustering:**
+**Step 4. Semantic Clustering:**
+- 설명
+
 ```bash
-cd kg_construct
 python refine_kg.py
 ```
 
 **Severity score definition:**
+- 설명
+
 ```bash
 cd severity_score
 python sev_score_pubmed_wiki.py
 ```
 
 
-### 3. Patient Medical Profile Retrieval
+## 3. Patient Medical Profile Retrieval
+**Step 1. Trajectory Retrieval & Refinement**
+- 설명
 
-**Trajectory Retrieval**
 ```bash
 cd trajectory path
+
 python trajectory_retrieval.py
-```
-
-**Trajectory Refinement**
-```bash
-cd trajectory path
 python trajectory_refinement.py
 ```
 
-### 4. Retrieval-augmented Clinical Risk Prediction
-
+## 4. Retrieval-augmented Clinical Risk Prediction
 **Inference**
+- For other datasets and tasks, change the prompts and directories.
+- Prompts are available in the prompt folder.
 
-For other datasets and tasks, change the prompts and directories. 
-Prompts are available in the prompt folder. 
 ```bash
 cd inference
 python mimic3_mortality.py
