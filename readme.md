@@ -93,3 +93,15 @@ python trajectory_refinement.py
 cd inference
 python mimic3_mortality.py
 ```
+
+# Citation
+```bibtex
+@inproceedings{
+anonymous2026trajectoryaware,
+title={Trajectory-Aware Clinical Risk Prediction via Severity-Grounded Knowledge Graphs and Retrieval-Augmented Generation},
+author={Anonymous},
+booktitle={32nd SIGKDD Conference on Knowledge Discovery and Data Mining, 2026 - Research Track (Second Cycle Deadline)},
+year={2026},
+url={https://openreview.net/forum?id=jINfoxNmeh}
+}
+```
