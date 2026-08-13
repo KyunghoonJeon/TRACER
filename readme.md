@@ -5,13 +5,12 @@
 This project utilizes the MIMIC-III and MIMIC-IV datasets provided by the MIT Laboratory for Computational Physiology (LCP).
 Since these datasets contain de-identified health information, data access requires credentialed authorization through the PhysioNet platform.
 
-**Step 1.** Complete CITI “Data or Specimens Only Research” Training
+**Step 1.** Complete CITI “Data or Specimens Only Research” Training  
+**Step 2.** Request Access via PhysioNet  
+**Step 3.** Once approved download the Data  
 
-**Step 2.** Request Access via PhysioNet
-
-**Step 3.** Once approved download the Data
-
-‼️**[2026.08.13 Update]** Now, You can download the SMKG in **[hear](https://drive.google.com/drive/folders/1uqhM8Szm3EWO47t89F50dRcBV-mmX3xd?usp=sharing)**‼️
+### SMKG Download
+[**2026.08.13 Update**] Now, You can download the SMKG in **[hear](https://drive.google.com/drive/folders/1uqhM8Szm3EWO47t89F50dRcBV-mmX3xd?usp=sharing)**‼️
 
 ## 1. Prepare EHR data
 ```bash
