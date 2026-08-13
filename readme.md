@@ -11,6 +11,7 @@ Since these datasets contain de-identified health information, data access requi
 
 **Step 3.** Once approved download the Data
 
+**[2026.08.13 Update]** Now, You can download the SMKG in **[hear](https://drive.google.com/drive/folders/1uqhM8Szm3EWO47t89F50dRcBV-mmX3xd?usp=sharing)**
 
 ## 1. Prepare EHR data
 ```bash
